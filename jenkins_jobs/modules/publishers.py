@@ -2099,6 +2099,9 @@ def base_email_ext(registry, xml_parent, data, ttype):
             'culprits' in data['send-to']).lower()
         XML.SubElement(email, 'sendToRecipientList').text = str(
             'recipients' in data['send-to']).lower()
+        if 'upstream-committers' in data['send-to']:
+            XML.SubElement(email, 'recipientProviders',
+                           'hudson.plugins.emailext.plugins.recipients.UpstreamComitterRecipientProvider').text = ''
     else:
         XML.SubElement(email, 'sendToRequester').text = 'false'
         XML.SubElement(email, 'sendToDevelopers').text = 'false'
