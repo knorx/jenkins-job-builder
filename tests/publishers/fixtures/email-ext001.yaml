@@ -25,6 +25,10 @@ publishers:
       still-unstable: true
       pre-build: true
       matrix-trigger: only-configurations
+      trigger-subject:
+          regression: Subject specific to regression triggered email
+      trigger-body:
+          regression: Body specific to regression triggered email
       presend-script: "cancel=true"
       postsend-script: "cancel=true"
       save-output: true

@@ -73,8 +73,8 @@
         <hudson.plugins.emailext.plugins.trigger.RegressionTrigger>
           <email>
             <recipientList/>
-            <subject>$PROJECT_DEFAULT_SUBJECT</subject>
-            <body>$PROJECT_DEFAULT_CONTENT</body>
+            <subject>Subject specific to regression triggered email</subject>
+            <body>Body specific to regression triggered email</body>
             <sendToDevelopers>true</sendToDevelopers>
             <sendToRequester>true</sendToRequester>
             <includeCulprits>true</includeCulprits>
