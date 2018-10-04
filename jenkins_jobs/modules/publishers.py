@@ -2173,6 +2173,12 @@ def email_ext(registry, xml_parent, data):
     :arg bool pre-build: Send an email before the build (default false)
     :arg str trigger-script: A Groovy script used to determine if an email
         should be sent.
+    :arg dict trigger-subject: Allows to define subject for the email specific
+        to triggers.
+        Name the trigger and a corresponding subject.
+    :arg dict trigger-body: Allows to define the content for the body of the
+        email specific to triggers.
+        Name the trigger and a corresponding body.
     :arg str presend-script: A Groovy script executed prior sending the mail.
         (default '')
     :arg str postsend-script: A Goovy script executed after sending the email.
