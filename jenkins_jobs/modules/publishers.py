@@ -2186,6 +2186,7 @@ def email_ext(registry, xml_parent, data):
             * **requester** (disabled by default)
             * **culprits** (disabled by default)
             * **recipients** (enabled by default)
+            * **upstream-committers** (disabled by default)
 
     Example:
 
