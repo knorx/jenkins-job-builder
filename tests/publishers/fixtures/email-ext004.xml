@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <publishers>
+    <hudson.plugins.emailext.ExtendedEmailPublisher>
+      <recipientList>$DEFAULT_RECIPIENTS</recipientList>
+      <configuredTriggers>
+        <hudson.plugins.emailext.plugins.trigger.AlwaysTrigger>
+          <email>
+            <recipientList/>
+            <subject>Subject specific to 'always' triggered email</subject>
+            <body>Body specific to 'always' triggered email</body>
+            <sendToDevelopers>true</sendToDevelopers>
+            <sendToRequester>true</sendToRequester>
+            <includeCulprits>true</includeCulprits>
+            <sendToRecipientList>true</sendToRecipientList>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.AlwaysTrigger>
+        <hudson.plugins.emailext.plugins.trigger.UnstableTrigger>
+          <email>
+            <recipientList/>
+            <subject>Subject specific to 'unstable' triggered email</subject>
+            <body>Body specific to 'unstable' triggered email</body>
+            <sendToDevelopers>true</sendToDevelopers>
+            <sendToRequester>true</sendToRequester>
+            <includeCulprits>true</includeCulprits>
+            <sendToRecipientList>true</sendToRecipientList>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.UnstableTrigger>
+        <hudson.plugins.emailext.plugins.trigger.FirstFailureTrigger>
+          <email>
+            <recipientList/>
+            <subject>Subject specific to 'first-failure' triggered email</subject>
+            <body>Body specific to 'first-failure' triggered email</body>
+            <sendToDevelopers>true</sendToDevelopers>
+            <sendToRequester>true</sendToRequester>
+            <includeCulprits>true</includeCulprits>
+            <sendToRecipientList>true</sendToRecipientList>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.FirstFailureTrigger>
+        <hudson.plugins.emailext.plugins.trigger.NotBuiltTrigger>
+          <email>
+            <recipientList/>
+            <subject>Subject specific to 'not-built' triggered email</subject>
+            <body>Body specific to 'not-built' triggered email</body>
+            <sendToDevelopers>true</sendToDevelopers>
+            <sendToRequester>true</sendToRequester>
+            <includeCulprits>true</includeCulprits>
+            <sendToRecipientList>true</sendToRecipientList>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.NotBuiltTrigger>
+        <hudson.plugins.emailext.plugins.trigger.AbortedTrigger>
+          <email>
+            <recipientList/>
+            <subject>Subject specific to 'aborted' triggered email</subject>
+            <body>Body specific to 'aborted' triggered email</body>
+            <sendToDevelopers>true</sendToDevelopers>
+            <sendToRequester>true</sendToRequester>
+            <includeCulprits>true</includeCulprits>
+            <sendToRecipientList>true</sendToRecipientList>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.AbortedTrigger>
+        <hudson.plugins.emailext.plugins.trigger.RegressionTrigger>
+          <email>
+            <recipientList/>
+            <subject>Subject specific to 'regression' triggered email</subject>
+            <body>Body specific to 'regression' triggered email</body>
+            <sendToDevelopers>true</sendToDevelopers>
+            <sendToRequester>true</sendToRequester>
+            <includeCulprits>true</includeCulprits>
+            <sendToRecipientList>true</sendToRecipientList>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.RegressionTrigger>
+        <hudson.plugins.emailext.plugins.trigger.FailureTrigger>
+          <email>
+            <recipientList/>
+            <subject>Subject specific to 'failure' triggered email</subject>
+            <body>Body specific to 'failure' triggered email</body>
+            <sendToDevelopers>true</sendToDevelopers>
+            <sendToRequester>true</sendToRequester>
+            <includeCulprits>true</includeCulprits>
+            <sendToRecipientList>true</sendToRecipientList>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.FailureTrigger>
+        <hudson.plugins.emailext.plugins.trigger.SecondFailureTrigger>
+          <email>
+            <recipientList/>
+            <subject>Subject specific to 'second-failure' triggered email</subject>
+            <body>Body specific to 'second-failure' triggered email</body>
+            <sendToDevelopers>true</sendToDevelopers>
+            <sendToRequester>true</sendToRequester>
+            <includeCulprits>true</includeCulprits>
+            <sendToRecipientList>true</sendToRecipientList>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.SecondFailureTrigger>
+        <hudson.plugins.emailext.plugins.trigger.ImprovementTrigger>
+          <email>
+            <recipientList/>
+            <subject>Subject specific to 'improvement' triggered email</subject>
+            <body>Body specific to 'improvement' triggered email</body>
+            <sendToDevelopers>true</sendToDevelopers>
+            <sendToRequester>true</sendToRequester>
+            <includeCulprits>true</includeCulprits>
+            <sendToRecipientList>true</sendToRecipientList>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.ImprovementTrigger>
+        <hudson.plugins.emailext.plugins.trigger.StillFailingTrigger>
+          <email>
+            <recipientList/>
+            <subject>Subject specific to 'still-failing' triggered email</subject>
+            <body>Body specific to 'still-failing' triggered email</body>
+            <sendToDevelopers>true</sendToDevelopers>
+            <sendToRequester>true</sendToRequester>
+            <includeCulprits>true</includeCulprits>
+            <sendToRecipientList>true</sendToRecipientList>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.StillFailingTrigger>
+        <hudson.plugins.emailext.plugins.trigger.SuccessTrigger>
+          <email>
+            <recipientList/>
+            <subject>Subject specific to 'success' triggered email</subject>
+            <body>Body specific to 'success' triggered email</body>
+            <sendToDevelopers>true</sendToDevelopers>
+            <sendToRequester>true</sendToRequester>
+            <includeCulprits>true</includeCulprits>
+            <sendToRecipientList>true</sendToRecipientList>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.SuccessTrigger>
+        <hudson.plugins.emailext.plugins.trigger.FixedTrigger>
+          <email>
+            <recipientList/>
+            <subject>Subject specific to 'fixed' triggered email</subject>
+            <body>Body specific to 'fixed' triggered email</body>
+            <sendToDevelopers>true</sendToDevelopers>
+            <sendToRequester>true</sendToRequester>
+            <includeCulprits>true</includeCulprits>
+            <sendToRecipientList>true</sendToRecipientList>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.FixedTrigger>
+        <hudson.plugins.emailext.plugins.trigger.StillUnstableTrigger>
+          <email>
+            <recipientList/>
+            <subject>Subject specific to 'still-unstable' triggered email</subject>
+            <body>Body specific to 'still-unstable' triggered email</body>
+            <sendToDevelopers>true</sendToDevelopers>
+            <sendToRequester>true</sendToRequester>
+            <includeCulprits>true</includeCulprits>
+            <sendToRecipientList>true</sendToRecipientList>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.StillUnstableTrigger>
+        <hudson.plugins.emailext.plugins.trigger.PreBuildTrigger>
+          <email>
+            <recipientList/>
+            <subject>Subject specific to 'pre-build' triggered email</subject>
+            <body>Body specific to 'pre-build' triggered email</body>
+            <sendToDevelopers>true</sendToDevelopers>
+            <sendToRequester>true</sendToRequester>
+            <includeCulprits>true</includeCulprits>
+            <sendToRecipientList>true</sendToRecipientList>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.PreBuildTrigger>
+        <hudson.plugins.emailext.plugins.trigger.ScriptTrigger>
+          <email>
+            <recipientList/>
+            <subject>Subject specific to 'trigger-script' triggered email</subject>
+            <body>Body specific to 'trigger-script' triggered email</body>
+            <sendToDevelopers>true</sendToDevelopers>
+            <sendToRequester>true</sendToRequester>
+            <includeCulprits>true</includeCulprits>
+            <sendToRecipientList>true</sendToRecipientList>
+          </email>
+          <triggerScript>build.result.toString().equals('SUCCESS')</triggerScript>
+        </hudson.plugins.emailext.plugins.trigger.ScriptTrigger>
+      </configuredTriggers>
+      <contentType>text/html</contentType>
+      <defaultSubject>Subject for Build ${BUILD_NUMBER}</defaultSubject>
+      <defaultContent>The build has finished</defaultContent>
+      <attachmentsPattern/>
+      <presendScript/>
+      <postsendScript/>
+      <attachBuildLog>false</attachBuildLog>
+      <compressBuildLog>false</compressBuildLog>
+      <saveOutput>false</saveOutput>
+      <disabled>false</disabled>
+      <replyTo>$DEFAULT_REPLYTO</replyTo>
+    </hudson.plugins.emailext.ExtendedEmailPublisher>
+  </publishers>
+</project>

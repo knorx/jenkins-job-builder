@@ -1,0 +1,57 @@
+publishers:
+  - email-ext:
+      content-type: html
+      subject: Subject for Build ${BUILD_NUMBER}
+      body: The build has finished
+      always: true
+      unstable: true
+      first-failure: true
+      not-built: true
+      aborted: true
+      regression: true
+      failure: true
+      second-failure: true
+      improvement: true
+      still-failing: true
+      success: true
+      fixed: true
+      still-unstable: true
+      pre-build: true
+      trigger-script: "build.result.toString().equals('SUCCESS')"
+      trigger-subject:
+          always: Subject specific to 'always' triggered email
+          unstable: Subject specific to 'unstable' triggered email
+          first-failure: Subject specific to 'first-failure' triggered email
+          not-built: Subject specific to 'not-built' triggered email
+          aborted: Subject specific to 'aborted' triggered email
+          regression: Subject specific to 'regression' triggered email
+          failure: Subject specific to 'failure' triggered email
+          second-failure: Subject specific to 'second-failure' triggered email
+          improvement: Subject specific to 'improvement' triggered email
+          still-failing: Subject specific to 'still-failing' triggered email
+          success: Subject specific to 'success' triggered email
+          fixed: Subject specific to 'fixed' triggered email
+          still-unstable: Subject specific to 'still-unstable' triggered email
+          pre-build: Subject specific to 'pre-build' triggered email
+          trigger-script: Subject specific to 'trigger-script' triggered email
+      trigger-body:
+          always: Body specific to 'always' triggered email
+          unstable: Body specific to 'unstable' triggered email
+          first-failure: Body specific to 'first-failure' triggered email
+          not-built: Body specific to 'not-built' triggered email
+          aborted: Body specific to 'aborted' triggered email
+          regression: Body specific to 'regression' triggered email
+          failure: Body specific to 'failure' triggered email
+          second-failure: Body specific to 'second-failure' triggered email
+          improvement: Body specific to 'improvement' triggered email
+          still-failing: Body specific to 'still-failing' triggered email
+          success: Body specific to 'success' triggered email
+          fixed: Body specific to 'fixed' triggered email
+          still-unstable: Body specific to 'still-unstable' triggered email
+          pre-build: Body specific to 'pre-build' triggered email
+          trigger-script: Body specific to 'trigger-script' triggered email
+      send-to:
+        - developers
+        - requester
+        - culprits
+        - recipients
