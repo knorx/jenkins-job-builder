@@ -2082,14 +2082,23 @@ def claim_build(registry, xml_parent, data):
     XML.SubElement(xml_parent, 'hudson.plugins.claim.ClaimPublisher')
 
 
-def base_email_ext(registry, xml_parent, data, ttype):
+def base_email_ext(registry, xml_parent, data, ttype, trigger_name):
     trigger = XML.SubElement(xml_parent,
                              'hudson.plugins.emailext.plugins.trigger.' +
                              ttype)
     email = XML.SubElement(trigger, 'email')
     XML.SubElement(email, 'recipientList').text = ''
-    XML.SubElement(email, 'subject').text = '$PROJECT_DEFAULT_SUBJECT'
-    XML.SubElement(email, 'body').text = '$PROJECT_DEFAULT_CONTENT'
+
+    subject = '$PROJECT_DEFAULT_SUBJECT'
+    if 'trigger-subject' in data and trigger_name in data['trigger-subject']:
+        subject = data['trigger-subject'][trigger_name]
+    XML.SubElement(email, 'subject').text = subject
+
+    body = '$PROJECT_DEFAULT_CONTENT'
+    if 'trigger-body' in data and trigger_name in data['trigger-body']:
+        body = data['trigger-body'][trigger_name]
+    XML.SubElement(email, 'body').text = body
+
     if 'send-to' in data:
         XML.SubElement(email, 'sendToDevelopers').text = str(
             'developers' in data['send-to']).lower()
@@ -2197,39 +2206,39 @@ def email_ext(registry, xml_parent, data):
         XML.SubElement(emailext, 'recipientList').text = '$DEFAULT_RECIPIENTS'
     ctrigger = XML.SubElement(emailext, 'configuredTriggers')
     if data.get('always', False):
-        base_email_ext(registry, ctrigger, data, 'AlwaysTrigger')
+        base_email_ext(registry, ctrigger, data, 'AlwaysTrigger', 'always')
     if data.get('unstable', False):
-        base_email_ext(registry, ctrigger, data, 'UnstableTrigger')
+        base_email_ext(registry, ctrigger, data, 'UnstableTrigger', 'unstable')
     if data.get('first-failure', False):
-        base_email_ext(registry, ctrigger, data, 'FirstFailureTrigger')
+        base_email_ext(registry, ctrigger, data, 'FirstFailureTrigger', 'first-failure')
     if data.get('first-unstable', False):
-        base_email_ext(registry, ctrigger, data, 'FirstUnstableTrigger')
+        base_email_ext(registry, ctrigger, data, 'FirstUnstableTrigger', 'first-unstable')
     if data.get('not-built', False):
-        base_email_ext(registry, ctrigger, data, 'NotBuiltTrigger')
+        base_email_ext(registry, ctrigger, data, 'NotBuiltTrigger', 'not-built')
     if data.get('aborted', False):
-        base_email_ext(registry, ctrigger, data, 'AbortedTrigger')
+        base_email_ext(registry, ctrigger, data, 'AbortedTrigger', 'aborted')
     if data.get('regression', False):
-        base_email_ext(registry, ctrigger, data, 'RegressionTrigger')
+        base_email_ext(registry, ctrigger, data, 'RegressionTrigger', 'regression')
     if data.get('failure', True):
-        base_email_ext(registry, ctrigger, data, 'FailureTrigger')
+        base_email_ext(registry, ctrigger, data, 'FailureTrigger', 'failure')
     if data.get('second-failure', False):
-        base_email_ext(registry, ctrigger, data, 'SecondFailureTrigger')
+        base_email_ext(registry, ctrigger, data, 'SecondFailureTrigger', 'second-failure')
     if data.get('improvement', False):
-        base_email_ext(registry, ctrigger, data, 'ImprovementTrigger')
+        base_email_ext(registry, ctrigger, data, 'ImprovementTrigger', 'improvement')
     if data.get('still-failing', False):
-        base_email_ext(registry, ctrigger, data, 'StillFailingTrigger')
+        base_email_ext(registry, ctrigger, data, 'StillFailingTrigger', 'still-failing')
     if data.get('success', False):
-        base_email_ext(registry, ctrigger, data, 'SuccessTrigger')
+        base_email_ext(registry, ctrigger, data, 'SuccessTrigger', 'success')
     if data.get('fixed', False):
-        base_email_ext(registry, ctrigger, data, 'FixedTrigger')
+        base_email_ext(registry, ctrigger, data, 'FixedTrigger', 'fixed')
     if data.get('fixed-unhealthy', False):
-        base_email_ext(registry, ctrigger, data, 'FixedUnhealthyTrigger')
+        base_email_ext(registry, ctrigger, data, 'FixedUnhealthyTrigger', 'fixed-unhealthy')
     if data.get('still-unstable', False):
-        base_email_ext(registry, ctrigger, data, 'StillUnstableTrigger')
+        base_email_ext(registry, ctrigger, data, 'StillUnstableTrigger', 'still-unstable')
     if data.get('pre-build', False):
-        base_email_ext(registry, ctrigger, data, 'PreBuildTrigger')
+        base_email_ext(registry, ctrigger, data, 'PreBuildTrigger', 'pre-build')
     if data.get('trigger-script', False):
-        base_email_ext(registry, ctrigger, data, 'ScriptTrigger')
+        base_email_ext(registry, ctrigger, data, 'ScriptTrigger', 'trigger-script')
 
     content_type_mime = {
         'text': 'text/plain',
